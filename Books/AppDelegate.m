@@ -13,9 +13,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self custamAppearance];
     return YES;
 }
-							
+- (void)custamAppearance{
+    //nav
+    UIImage *haderImg = [UIImage imageNamed:@"header"];
+    [[UINavigationBar appearance] setBackgroundImage:haderImg
+                                       forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"tarance"]];
+    //CGFloat nn = 49;
+    //[[UINavigationBar appearance] setHeaderHeight:<#(CGFloat)#>];
+    
+    //tabbar
+    UIImage *image2 = [UIImage imageNamed:@"tabbg"];
+    [[UITabBar appearance] setBackgroundImage:image2];
+    
+    UIImage *image3= [UIImage imageNamed:@"tabbar_select"];
+    [[UITabBar appearance] setSelectionIndicatorImage:image3];
+    
+    //[[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tarance"]];
+    
+    //table
+    UIImage *tableBg = [UIImage imageNamed:@"bg"];
+    [[UITableView appearance] setBackgroundView:[[UIImageView alloc] initWithImage:tableBg]];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
